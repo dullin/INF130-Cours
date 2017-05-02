@@ -1,0 +1,268 @@
+\documentclass[aspectratio=169,usenames,dvipsnames]{beamer}
+\usepackage{listings}
+
+\usetheme[progressbar=frametitle]{metropolis}
+
+\makeatletter
+\setlength{\metropolis@titleseparator@linewidth}{2pt}
+\setlength{\metropolis@progressonsectionpage@linewidth}{2pt}
+\setlength{\metropolis@progressinheadfoot@linewidth}{2pt}
+\makeatother
+
+\lstset{language=[Visual]Basic, basicstyle=\footnotesize\ttfamily, keywordstyle=\color{blue}, commentstyle=\color{OliveGreen},frame=single}
+
+\title{INF130 : Ordinateurs et programmation}
+\subtitle{Semaine 1 – Programmation, variables, entrées/sorties, conditionnelles}
+\author{Hugo Leblanc}
+
+\begin{document}
+    \maketitle
+    \begin{frame}[shrink=10]{Sommaire}
+        \smallskip
+        \tableofcontents
+    \end{frame}
+    %--- Next Frame ---%
+
+    \section{Présentation du cours}
+    \subsection{Présentation personnelle}
+    \begin{frame}{Présentation personnelle}
+        \begin{description}
+            \item Hugo Leblanc
+            \item hugo.leblanc@etsmtl.ca
+            \item Baccalauréat en génie électrique de l’ÉTS en 2012
+            \item 14 ans de programmation scolarisée
+            \item Spécialisation en systèmes embarqués
+        \end{description}
+    \end{frame}
+    %--- Next Frame ---%
+    \subsection{{Présentation du cours}}
+    \begin{frame}[t]{Présentation du cours}
+        \begin{itemize}
+            \item Plan de cours
+            \begin{itemize}
+                \item Pondération
+                \item Date de remise
+                \item Politique de plagiat
+            \end{itemize}
+            \pause
+            \item Moodle ena.etsmtl.ca
+            \begin{itemize}
+                \item Centre de toures les intéractions du cours
+                \item Notes de cours, exerciecs, remise, messages
+            \end{itemize}
+            \pause
+            \item Structure de travail du cours
+            \begin{itemize}
+                \item 1000 erreurs à faire avant la fin de la session
+                \item Très facile de perdre le contrôle de la matière
+                \item Les travaux pratiques sont des préparations aux examens
+            \end{itemize}
+        \end{itemize}
+    \end{frame}
+    %--- Next Frame ---%
+    \section{Cours}
+    \begin{frame}{Objectifs de la semaine}
+        \begin{itemize}
+            \item Éditeur VBA
+            \item Modules
+            \item Commentaires
+            \item Procédures
+            \item Variables, types et assignation
+            \item Saisie et affichage
+            \item Opérateurs
+            \item Structure de contrôles conditionnelles (if / select case)
+        \end{itemize}
+    \end{frame}
+    %--- Next Frame ---%
+    \subsection{Éditeur VBA}
+    \begin{frame}{Éditeur VBA}
+        \begin{itemize}
+            \item Chaque application de la suite Microsoft Office contient un éditeur VBA qui nous permet de faire de la programmation à l’intérieur de l’application.
+            \item Dans le cours, nous utiliserons Excel comme application de base pour tous nos travaux.
+            \item Pour ouvrir l’éditeur, appuyer sur \alert{Alt-F11} à l’intérieur d’Excel
+            \item Un fichier contenant des programmes est un fichier avec des macros et doit avoir l’extension correspondante à la sauvegarde (\alert{.xlsm})
+            \item Un seul éditeur peux traiter plusieurs document Excel en même temps
+        \end{itemize}
+    \end{frame}
+    %--- Next Frame ---%
+    \subsection{Modules}
+    \begin{frame}{Modules}
+        \begin{itemize}
+            \item Un module est un regroupement de sous-programme
+            \item Plusieurs modules peuvent être dans le même fichier Excel
+            \item Les modules sont utilisés pour découper un grand programme en plus petites parties indépendantes
+            \item On ajoute un nouveau module par le menu \alert{Insert -> Module}
+        \end{itemize}
+    \end{frame}
+    %--- Next Frame ---%
+    \subsection{Commentaires}
+    \begin{frame}{Commentaires}
+        \begin{itemize}
+            \item Le caractère \alert{‘} (apostrophe) précède tous commentaires
+            \item Le reste de la ligne après le ‘ ne sera pas considéré par VBA durant l’exécution de code
+            \item Le commentaires sont primordiaux à la programmation
+            \item Les commentaires sont utilisés en en-tête de modules, fonction et programme ainsi qu’à l’intérieur d’un programme pour aider à comprendre l’intention des instructions.
+        \end{itemize}
+    \end{frame}
+    %--- Next Frame ---%
+    \subsection{Procédures}
+    \begin{frame}[fragile]{Procédures (sous-programmes)}
+        \begin{itemize}
+            \item Un sous-programmes est un amalgam d’instructions qui seront exécutées ensemble.
+            \item Le premier type de sous programme que nous allons voir est la procédure.
+            \item On exécute une procédure en appuyant sur le bouton « play » ou avec le raccourci F5.
+        \end{itemize}
+        \begin{lstlisting}
+'Les parties en bleu sont
+'essentielles à la syntaxes.
+'Le nom de la procédure est
+'à la discretion du programmeur.
+Sub NomDeProcedure()
+    'Instructions
+End Sub
+        \end{lstlisting}
+    \end{frame}
+    %--- Next Frame ---%
+    \subsection{Variables, types, Assignation}
+    \begin{frame}[fragile]{Variables - Déclaration}
+        \begin{itemize}
+            \item Une variable est la combinaison d’un espace mémoire réservé, un identificateur, une valeur et un type.
+            \item Une variable doit être déclaré avant de pouvoir être utilisé.
+            \item La déclaration est sous la forme suivante:
+            \begin{lstlisting}
+Dim nomVariable As Integer
+            \end{lstlisting}
+            \item Dim est le mot réservé pour la déclaration d’espace.
+            \item Le nom de la variable est à votre discretion.
+            \item Le dernier mot est le type de la variable.
+            \item Pour nous aider avec les déclarations nous utiliserons la configuration Option Explicit au début de tout nos modules.
+            \item Les déclarations se font au début des sous-programme.
+        \end{itemize} 
+    \end{frame}
+    %--- Next Frame ---%
+    \begin{frame}{Variables - Types}
+        \begin{itemize}
+            \item Un variable doit être définie par un type
+            \item Le type indique quel genre de donnée peut exister dans la variable
+            \item Les types de base sont:
+            \begin{itemize}
+                \item \alert{Integer} : Les nombres entiers de -32 768 à 32 767.
+                \item \alert{Long} : Les nombres entiers de -2 147 483 648 à 2 147 483 647.
+                \item \alert{Double} : Les nombres réels (avec une certaine marge d'erreur) de $-1.79769313486232 x 10^308$ à $1.79769313486232 x 10^308$.
+                \item \alert{String} : Les chaines de caractères, donc du texte. Par exemple "Allo!" ou "Miam, miam, miam. Les bons gros légumes." . Les chaines de caractères sont toujours délimiter de double guillmets.
+                \item \alert{Boolean} : Vrai ou faux (True et False sous VBA).
+            \end{itemize}
+        \end{itemize}
+    \end{frame}
+    %--- Next Frame ---%
+    \begin{frame}[fragile]{Variables - Assignation}
+        \begin{itemize}
+            \item On assigne une valeur à une variable l’opérateur =
+            \begin{lstlisting}
+Dim nomVariable As Integer
+nomVariable = 10
+            \end{lstlisting}
+            \item L’assignation va seulement prendre le type de valeur que la variable peut contenir (ne pas mettre du texte dans une variable de type Integer)
+            \item Les variables ont une valeur par nulle défault.
+            \item On utilise les valeur dans les variables en invoquant leur nom dans des équations
+            \begin{lstlisting}
+nomVariable = nomVariable + 5
+            \end{lstlisting}
+        \end{itemize}
+    \end{frame}
+    %--- Next Frame ---%
+    \subsection{Affichage et saisie}
+    \begin{frame}[fragile]{Affichage - MsgBox}
+        \begin{itemize}
+            \item L’affichage se fait avec un appel à MsgBox. Ce sous-programme doit recevoir une chaine de caractères qui sera affiché par la suite.
+            \begin{lstlisting}
+MsgBox "Allo monde!"
+Call MsgBox("Allo monde!")
+            \end{lstlisting}
+            \item On peut aussi envoyer une valeur numérique qui sera convertie en chaine avant d’être affiché.
+            \begin{lstlisting}
+MsgBox 345
+            \end{lstlisting}
+            \item MsgBox est plus versatile que les exemples plus haut mais il faudra attendre un plus grande connaissance des appel de sous-programme avant d’approfondir le sujet.
+
+        \end{itemize}
+    \end{frame}
+    %--- Next Frame ---%
+    \begin{frame}{Exercice – Salaire hebdomadaire}
+        \begin{itemize}
+            \item Écrivez un sous-programme avec trois variables (taux horaire, nombre d’heures travaillées et salaire hebdomadaire.
+            \item Calculez le salaire à partir du taux horaire et du nombre d’heures travaillées. 
+            \item Affichez-le salaire dans une boite de dialogue par la suite.
+        \end{itemize}
+    \end{frame}
+    %--- Next Frame ---%
+    \begin{frame}[fragile]{Saisie - InputBox}
+        \begin{itemize}
+            \item La saisie de texte ou de valeur se fait avec un appel au sous-programme InputBox.
+            \item On assigne le retour (la valeur saisie) dans un variable lors de l’appel.
+            \begin{lstlisting}
+Dim reponse As String
+reponse = InputBox("Entrez quelque chose:")
+            \end{lstlisting}
+            \item Le type du retour est une chaine de caractères. Pour saisir un nombre, on convertie la valeur avant de l’assigner.
+            \begin{lstlisting}
+Dim nombre As Integer
+reponse = Val(InputBox("Entrez quelque chose:"))
+            \end{lstlisting}
+        \end{itemize}
+    \end{frame}
+    %--- Next Frame ---%
+    \begin{frame}{Exercice – Salaire hebdomadaire avec InputBox}
+        Ajoutez à l’exercice précédent une saisie du taux horaire et du nombre d’heures travaillées avec des InputBox
+    \end{frame}
+    %--- Next Frame ---%
+    \subsection{Opérateurs}
+    \begin{frame}{Opérateurs}
+        \begin{itemize}
+            \item Les opérateurs arithmétique /, +, -, * et \^{} sont disponibles pour les opérations numérique.
+            \item L’opérateur \textbackslash permet de faire la division entière. La division entière coupe la partie fractionnaire).
+            \item L’opérateur Mod permet de faire le module d’un nombre. Le module est le restant après un division.
+            \item Les opérateurs relationnels <, <=, >, >=, =, <> (différent) permet de comparer deux valeurs numériques.
+            \item L’opérateur \& peut faire la concaténation (coller) deux chaines de caractères ensemble.
+        \end{itemize}
+    \end{frame}
+    %--- Next Frame ---%
+    \begin{frame}{Exercice – Salaire hebdomadaire avec concaténation}
+        Ajoutez à l’exercice précédent un affichage avec une phrase complète dans le MsgBox.
+    \end{frame}
+    %--- Next Frame ---%
+    \subsection{Structure de contrôle conditionnel}
+    \begin{frame}[fragile]{Structure de contrôle conditionnelle - if}
+        \begin{itemize}
+            \item La structure confitionnelle nous permet de prendre des décisions durant l’exécurtion de nos scripts
+            \item La décision à prendre doit être fait sur une expression booléenne (vrai ou faux)
+            
+            \smallskip
+\noindent\begin{minipage}{.45\textwidth}
+\begin{lstlisting}
+If nombre > 10 Then
+    MsgBox "Plus que 10!"
+End If
+\end{lstlisting}
+\end{minipage}\hfill
+\begin{minipage}{.45\textwidth}
+\begin{lstlisting}
+If nombre > 10 Then
+    MsgBox "Plus que 10!"
+ElseIf nombre > 20 Then
+    MsgBox "Plus que 20!"
+Else
+    MsgBox "Moins..."
+End If
+\end{lstlisting}
+\end{minipage}
+            \item Un seul bloc d’instruction est exécuté.
+            \item Le elseif peut être répété au besoin.
+        \end{itemize}
+    \end{frame}
+    %--- Next Frame ---%
+    \begin{frame}{Exercice – Salaire hebdomadaire avec temps supplémentaire}
+        Ajoutez à l’exercice précédant un calcul pour le temps supplémentaire.
+    \end{frame}
+    %--- Next Frame ---%
+\end{document}
