@@ -1,0 +1,141 @@
+\documentclass[aspectratio=169,usenames,dvipsnames]{beamer}
+\usepackage{listings}
+
+\usetheme[progressbar=frametitle]{metropolis}
+
+\makeatletter
+\setlength{\metropolis@titleseparator@linewidth}{2pt}
+\setlength{\metropolis@progressonsectionpage@linewidth}{2pt}
+\setlength{\metropolis@progressinheadfoot@linewidth}{2pt}
+\makeatother
+
+\lstset{language=[Visual]Basic, basicstyle=\footnotesize\ttfamily, keywordstyle=\color{blue}, commentstyle=\color{OliveGreen},frame=single}
+
+\title{INF130 : Ordinateurs et programmation}
+\subtitle{Semaine 2 – Présentation, Constantes, Boucles, opérateurs logiques, sous-programmes}
+\author{Hugo Leblanc}
+
+\begin{document}
+    \maketitle
+
+    %--- Next Frame ---%
+    \begin{frame}{Sommaire}
+        \tableofcontents
+    \end{frame}
+    %--- Next Frame ---%
+
+    \section{Présentation}
+    \subsection{Présentation et commentaires}
+    \begin{frame}{Présentation et commentaires}
+        \begin{itemize}
+            \item Commentaires
+            \begin{itemize}
+                \item En-tête
+                \item Actions
+            \end{itemize}
+            \item Identation
+            \item Espacement
+            \item Nom significatifs
+        \end{itemize}
+    \end{frame}
+    %--- Next Frame ---%
+    \subsection{Constantes}
+    \begin{frame}[fragile]{Constantes}
+        \begin{itemize}
+            \item Les constantes remplacent l’utilisation de valeurs numériques statiques dans le code.
+            \item Par convention, elles sont écrites en majuscules au début du module (en dehors des procédures).
+            \item On assigne directement la valeur à la constante durant la déclaration.
+        \end{itemize}
+        \begin{lstlisting}
+Const MA_CONSTANTE As Integer = 50
+        \end{lstlisting}
+    \end{frame}
+    %--- Next Frame ---%
+    \section{Structure de contrôle répétitives}
+    \begin{frame}[fragile]{Boucles - While}
+        \begin{itemize}
+            \item Les boucles permettent de répéter un bloc de code.
+            \item La boucle while répète le bloc de code tant que la condition de répétition est remplis
+            \item Le while est utilisé quand on ne connait pas le nombre d’itérations de boucle à faire.
+        \end{itemize}
+        \begin{lstlisting}
+While x < 10
+    'Instructions
+Wend
+        \end{lstlisting}
+    \end{frame}
+    %--- Next Frame ---%
+    \begin{frame}{Exercices}
+        \begin{itemize}
+            \item Saisit un nombre à l'utilisateur et recommence la saisit tant que le nombre n'est pas 0.
+            \item Calcule la somme des nombres de 1 a n. On saisit n.
+            \item Procédure qui saisit un nombre à l'utilisateur et va afficher le nombre factoriel de la saisit $(5! = 1x2x3x4x5)$
+
+        \end{itemize}
+    \end{frame}
+    %--- Next Frame ---%
+    \subsection{Boucles - For}
+    \begin{frame}[fragile]{Boucles - For}
+        \begin{itemize}
+            \item Lorsqu’on connait le nombre d’itérations de la boucles, on utilise la boucle for qui intègre un compteur dans sa configuration.
+        \end{itemize}
+\noindent\begin{minipage}{.25\textwidth}
+\begin{lstlisting}
+For i = 1 To 10
+    MsgBox i
+Next i
+\end{lstlisting}
+\end{minipage}\hfill
+\begin{minipage}{.32\textwidth}
+\begin{lstlisting}
+For i = 1 To 10 Step 2
+    MsgBox i
+Next i
+\end{lstlisting}
+\end{minipage}\hfill
+\begin{minipage}{.32\textwidth}
+\begin{lstlisting}
+For i = 5 To 1 Step -1
+    MsgBox i
+Next i
+\end{lstlisting}
+\end{minipage}
+    \end{frame}
+    %--- Next Frame ---%
+    \begin{frame}{Exercices}
+        \begin{itemize}
+            \item Calcule la somme des nombre de 1 à n. On saisit n. Utilisez un for.
+            \item Compte le nombre de 0 entrez au clavier sur 10 essais
+\end{itemize}
+    \end{frame}
+    %--- Next Frame ---%
+    \subsection{Opérateurs logiques}
+    \begin{frame}[fragile]{Opérateurs logiques}
+        \begin{itemize}
+            \item Les opérateurs logiques opèrent sur des valeurs booléennes
+            \item La conjonction ET : And
+            \item La disjonction OU : Or
+            \item La négation NON : Not
+        \end{itemize}
+    \end{frame}
+    %--- Next Frame ---%
+    \begin{frame}[fragile]{Exercice}
+        \begin{itemize}
+            \item Procédure qui saisit l'âge de l'utilisateur et qui indique si ce dernier a droit au tarif réduit. Le tarif réduit est disponible pour les personnes d’âge mineur (<18) ou d’âge d'or (>60).
+        \end{itemize}
+    \end{frame}
+    %--- Next Frame ---%
+    \section{Sous-programmes}
+    \begin{frame}[fragile]{Sous-programmes}
+        \begin{itemize}
+            \item Un sous-programme est un bloc de code réalisant une tâche précise.
+            \item La fonction retourne (se transformer en) une valeur.
+            \item Un sous-programme qui ne retourne rien est nommée une procédure.
+            \item Un sous-programme peut avoir des paramètres. Ceux-ci dictent l'utilisation du sous-programme.
+        \begin{lstlisting}
+variable = NomFonction(paramètre1,paramètre2)
+        \end{lstlisting}
+        \end{itemize}
+    \end{frame}
+    %--- Next Frame ---%
+\end{document}
