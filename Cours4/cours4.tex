@@ -1,0 +1,87 @@
+\documentclass[aspectratio=169,usenames,dvipsnames]{beamer}
+\usepackage{listings}
+
+\usetheme[progressbar=frametitle]{metropolis}
+
+\makeatletter
+\setlength{\metropolis@titleseparator@linewidth}{2pt}
+\setlength{\metropolis@progressonsectionpage@linewidth}{2pt}
+\setlength{\metropolis@progressinheadfoot@linewidth}{2pt}
+\makeatother
+
+\lstset{language=[Visual]Basic, basicstyle=\footnotesize\ttfamily, keywordstyle=\color{blue}, commentstyle=\color{OliveGreen},frame=single}
+
+\title{INF130 : Ordinateurs et programmation}
+\subtitle{Semaine 4 – Module, références, validation et tests}
+\author{Hugo Leblanc}
+
+\begin{document}
+    \maketitle
+
+    %--- Next Frame ---%
+    \begin{frame}{Sommaire}
+        \tableofcontents
+    \end{frame}
+    %--- Next Frame ---%
+
+    \section{Sous-programmes}
+    \subsection{Durée de vie des variables}
+    \begin{frame}[fragile]{Durée de vie des variables}
+        \begin{itemize}
+            \item Tout ce qui se passe à l'intérieur des fonctions est détruit après l'appel de la fonction.
+            \item Toutes déclaration de variables à l'intérieur d'une fonction est détruite après l'appel de la fonction.
+            \item Seul le retour est renvoyé.
+            \item Le mot clé \alert{Static} permet de conserver un variable vivante entre ses appels de sous-programmes.
+        \end{itemize}
+    \end{frame}
+    %--- Next Frame ---%
+    \subsection{Portées des éléments}
+    \begin{frame}[t]{Portées des éléments}
+        \begin{itemize}
+            \item La portée d’un élément indique sa visibilité par rapport aux autres modules.
+            \item Si un élément est visible, il peut être appelé (utilisé) à l’intérieur de sa portée.
+            \item La portée d’une procédure inclue ses déclarations de variables avec \alert{Dim}.
+            \item La portée privée (\alert{Private}) d’un module inclue ses déclaration de variables et de sous-programme privées.
+            \item La portée publique (\alert{Public}) d’un module inclue toutes les variables et sous-programmes publiques d’un projet (classeur).
+            \item Les variables de portée globale sont \alert{INTERDITES} dans le cours, sauf avis contraire.
+        \end{itemize}
+    \end{frame}
+        %--- Next Frame ---%
+    \subsection{Passage par référence - ByRef}
+    \begin{frame}{Passage par référence - ByRef}
+        \begin{itemize}
+            \item Le passage par référence reçoit une variable à la place d’une valeur comme dans le passage par valeur.
+            \item La référence est donc lié entre l’appellant du sous-programme et le sous-programme lui-même.
+            \item Une modification d’une variable passé en référence restera modifié après l’exécution du sous-programme.
+            \item Les noms entre le paramètre passée et le nom du paramètre n’a pas d’importance.
+        \end{itemize}
+    \end{frame}
+    %--- Next Frame ---%
+    \subsection{Validation}
+    \begin{frame}{Validation}
+        \begin{itemize}
+            \item La validation permet de regarder et valider des informations avant de continuer dans un programme
+            \item La validation est surtout utilisée quand nous recevons des informations de l’extérieur (avec InputBox)
+            \item La validation permet de générer une erreur avant d’avoir des résultats erronés. 
+            \item Le mot-clé \alert{End} permet de terminer l'exécution de notre programme prématurément.
+        \end{itemize}
+    \end{frame}
+    %--- Next Frame ---%
+    \subsection{Test}
+    \begin{frame}{Test}
+        \begin{itemize}
+            \item Le test d'une fonction permet de s'assurer de son comportement avant de passer à la création d'élément plus complexes.
+            \item Les tests peuvent être dynamique avec des saisis et affichages ou statique par rapport à des valeurs et réponse déjà connus.
+            \item Pour de grand projet, les tests statiques sont utilisé pour s'assurer du bon fonctionnement au fur et à mesure de la conception.
+        \end{itemize}
+    \end{frame}
+    %--- Next Frame ---%
+    \begin{frame}{Exercices}
+        \begin{itemize}
+            \item Écrivez une fonction qui retourne le nombre de fois que la fonction à été appellé. Utilisez le mot-clé Static.
+            \item Écrivez une fonction qui reçoit une variable par référence et un nombre. La fonction additionne le nombre à la variable donnée.
+            \item Écrivez une fonction qui reçoit une valeur entière et arrète l'exécution du programme si celle-ci n'est pas positive.
+        \end{itemize}
+    \end{frame}
+    %--- Next Frame ---%
+\end{document}
