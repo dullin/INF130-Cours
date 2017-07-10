@@ -1,0 +1,73 @@
+\documentclass[aspectratio=169,usenames,dvipsnames]{beamer}
+\usepackage{listings}
+
+\usetheme[progressbar=frametitle]{metropolis}
+
+\makeatletter
+\setlength{\metropolis@titleseparator@linewidth}{2pt}
+\setlength{\metropolis@progressonsectionpage@linewidth}{2pt}
+\setlength{\metropolis@progressinheadfoot@linewidth}{2pt}
+\makeatother
+
+\lstset{language=[Visual]Basic, basicstyle=\footnotesize\ttfamily, keywordstyle=\color{blue}, commentstyle=\color{OliveGreen},frame=single}
+
+\title{INF130 : Ordinateurs et programmation}
+\subtitle{Semaine 8 – Types }
+\author{Hugo Leblanc}
+
+\begin{document}
+    \maketitle
+
+    %--- Next Frame ---%
+    \begin{frame}{Sommaire}
+        \tableofcontents
+    \end{frame}
+    %--- Next Frame ---%
+
+    \section{Type définis}
+    \subsection{Description}
+    \begin{frame}{Description}
+        \begin{itemize}
+            \item Un type défini est une nouvelle structure de données (comme les tableaux ou les chaines de caractères).
+            \item Sous un seul identificateur, des champs (avec des noms de notre propre crus) vont chacun contenir des valeurs.
+        \end{itemize}
+    \end{frame}
+    %--- Next Frame ---%
+    \subsection{Création}
+    \begin{frame}[fragile]{Création de types définis}
+        \begin{itemize}
+            \item La déclaration d’un type défini se fait à l’extérieur des sous-programmes. Le type sera disponible pour tous les sous-programmes.
+            \item Chaque champs aura un type spécifique.
+            \item Les champs peuvent aussi être des tableaux.      
+        \end{itemize}
+\begin{lstlisting}
+Type mon_type
+    champ1 As Integer
+    champ2() As Double
+    champ3 As String
+End Type
+\end{lstlisting} 
+    \end{frame}
+    %--- Next Frame ---%
+    \subsection{Utilisation des types définis}
+    \begin{frame}[fragile]{Utilisation des types définis}
+        \begin{itemize}
+            \item On utilise un type défini comme un autre type connu (Integer, String, etc.).
+            \item On doit le déclaré pour en faire sont utilisation.
+            \item L’accès au champs se fait avec l’opérateur point « . ».
+        \end{itemize}
+\begin{lstlisting}
+Sub test_type()
+    Dim type1 as mon_type
+
+    type1.champ1 = 5
+    ReDim type1.champ2(5)
+    type1.champ2(4) = 4.5
+    type1.champ3 = "allo"
+End Sub
+\end{lstlisting}  
+        
+    \end{frame}
+    %--- Next Frame ---%
+    
+\end{document}

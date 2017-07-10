@@ -1,0 +1,85 @@
+\documentclass[aspectratio=169,usenames,dvipsnames]{beamer}
+\usepackage{listings}
+
+\usetheme[progressbar=frametitle]{metropolis}
+
+\makeatletter
+\setlength{\metropolis@titleseparator@linewidth}{2pt}
+\setlength{\metropolis@progressonsectionpage@linewidth}{2pt}
+\setlength{\metropolis@progressinheadfoot@linewidth}{2pt}
+\makeatother
+
+\lstset{language=[Visual]Basic, basicstyle=\footnotesize\ttfamily, keywordstyle=\color{blue}, commentstyle=\color{OliveGreen},frame=single}
+
+\title{INF130 : Ordinateurs et programmation}
+\subtitle{Semaine 9 – Classeurs et environnement d'Excel}
+\author{Hugo Leblanc}
+
+\begin{document}
+    \maketitle
+
+    %--- Next Frame ---%
+    \begin{frame}{Sommaire}
+        \tableofcontents
+    \end{frame}
+    %--- Next Frame ---%
+
+    \section{Evironnement d'Excel}
+    \begin{frame}{Environnement d’Excel}
+        \begin{itemize}
+            \item L’environnement d’Excel est un hiérarichie d’objets.
+            \item Au plus haut niveau, nous avons le classeur (.xlsm).
+            \item Le classeur contient des feuilles de calculs, des modules et des formulaires.
+            \item Chaque feuille de calculs contiennent des cellules.
+            \item Une plage est une collection de plusieurs cellules.
+        \end{itemize}
+    \end{frame}
+    %--- Next Frame ---%
+    \section{Contrôles de formulaire}
+    \begin{frame}{Contrôles de formulaire}
+        \begin{itemize}
+            \item On doit avoir accès à l’onglet Développeur (on l’ajoute dans les options d’Excel) pour avoir accès au contrôles.
+            \item Les contrôles peuvents être ajoutés à des feuilles de calcul ou des formulaires
+        \end{itemize}
+    \end{frame}
+    %--- Next Frame ---%
+    \begin{frame}{Contrôles de formulaire}
+        \begin{itemize}
+            \item Les cases à cocher permettent d'indiquer si une option est activée au moyen d'un crochet.
+            \item Les cases d'options permettent de choisir une option parmi un groupe d'options mutuellement exclusives. Pour les utiliser, il faut tout d'abord ajouter un groupe d'options.
+            \item Les compteurs et les barres de défilement permettent d'augmenter ou de réduire une valeur affichée.
+            \item Les zones de liste et les zones combinées déroulantes permettent de choisir un élément dans une liste.
+            \item Les boutons permettent l'exécution de macros ou de programmes VBA.
+        \end{itemize}
+    \end{frame}
+    %--- Next Frame ---%
+    \section{Les objets d'Excel}
+    \begin{frame}{Les objets d'Excel}
+        \begin{itemize}
+            \item Un objet est un entité qui contient à la fois des propriétés (variables) et des méthodes (sous-programmes).
+            \item Des centaines d’objets sont diponible dans Excel mais les plus important sont les suivants:
+            \begin{itemize}
+                \item Application – l’application d’Excel (et tous les classeurs ouvert)
+                \item Workbook – Un classeur avec ses feuilles
+                \item Worksheet – Une feuille de calcul
+                \item Range – Une sélection de cellule d’une feuille
+            \end{itemize}
+            \item Les objets peuvent être utilisé en tant que paramètre de sous-programmes.
+        \end{itemize}
+    \end{frame}
+    %--- Next Frame ---%
+    \begin{frame}{Accéder au contenu d’une feuille}
+        \begin{itemize}
+            \item Il est possible d'accéder au contenu des cellules dans une feuille à l'aide des propriétés Range et Cells.
+            \item Cells(ligne ,colonne) permet de faire réréfence à une cellule particulière.
+            \item Range permet de sélectionner un plage de cellule voici quelque exemple d’utilisation:
+            \begin{itemize}
+            \item Range("A1")
+            \item Range("A1:E5")
+            \item Ragne("CELLULE\_NOMME")
+            \item Range(Cells(2, 2), Cells(10, 5))
+            \end{itemize}
+        \end{itemize}
+
+    \end{frame}
+\end{document}
