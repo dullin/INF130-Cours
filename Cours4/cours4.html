@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Hugo Leblanc">
+  <title>INF130 - Portées</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="http://lab.hakim.se/reveal-js/css/reveal.css">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="http://lab.hakim.se/reveal-js/css/theme/black.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'http://lab.hakim.se/reveal-js/css/print/pdf.css' : 'http://lab.hakim.se/reveal-js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="http://lab.hakim.se/reveal-js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">INF130 - Portées</h1>
+  <p class="author">Hugo Leblanc</p>
+  <p class="date">Cours 4</p>
+</section>
+
+<section><section id="sous-programmes" class="title-slide slide level1"><h1>Sous-programmes</h1></section><section id="durée-de-vie-des-variables" class="slide level2">
+<h2>Durée de vie des variables</h2>
+<ul>
+<li><p>Tout ce qui se passe à l’intérieur des fonctions est détruit après l’appel de la fonction.</p></li>
+<li><p>Toutes déclaration de variables à l’intérieur d’une fonction est détruite après l’appel de la fonction.</p></li>
+<li><p>Seul le retour est renvoyé.</p></li>
+<li><p>Le mot clé <span class="alert">Static</span> permet de conserver un variable vivante entre ses appels de sous-programmes.</p></li>
+</ul>
+</section><section id="portées-des-éléments" class="slide level2">
+<h2>Portées des éléments</h2>
+<ul>
+<li><p>La portée d’un élément indique sa visibilité par rapport aux autres modules.</p></li>
+<li><p>Si un élément est visible, il peut être appelé (utilisé) à l’intérieur de sa portée.</p></li>
+<li><p>La portée d’une procédure inclue ses déclarations de variables avec <span class="alert">Dim</span>.</p></li>
+<li><p>La portée privée (<span class="alert">Private</span>) d’un module inclue ses déclaration de variables et de sous-programme privées.</p></li>
+</ul>
+</section><section id="portées-suite" class="slide level2">
+<h2>Portées (suite)</h2>
+<ul>
+<li><p>La portée publique (<span class="alert">Public</span>) d’un module inclue toutes les variables et sous-programmes publiques d’un projet (classeur).</p></li>
+<li><p>Les variables de portée globale sont <span class="alert">INTERDITES</span> dans le cours, sauf avis contraire.</p></li>
+</ul>
+</section><section id="passage-par-référence---byref" class="slide level2">
+<h2>Passage par référence - ByRef</h2>
+<p>Passage par référence - ByRef</p>
+<ul>
+<li><p>Le passage par référence reçoit une variable à la place d’une valeur comme dans le passage par valeur.</p></li>
+<li><p>La référence est donc lié entre l’appellant du sous-programme et le sous-programme lui-même.</p></li>
+<li><p>Une modification d’une variable passé en référence restera modifié après l’exécution du sous-programme.</p></li>
+<li><p>Les noms entre le paramètre passée et le nom du paramètre n’a pas d’importance.</p></li>
+</ul>
+</section><section id="validation" class="slide level2">
+<h2>Validation</h2>
+<ul>
+<li><p>La validation permet de regarder et valider des informations avant de continuer dans un programme</p></li>
+<li><p>La validation est surtout utilisée quand nous recevons des informations de l’extérieur (avec InputBox)</p></li>
+<li><p>La validation permet de générer une erreur avant d’avoir des résultats erronés.</p></li>
+<li><p>Le mot-clé <span class="alert">End</span> permet de terminer l’exécution de notre programme prématurément.</p></li>
+</ul>
+</section><section id="test" class="slide level2">
+<h2>Test</h2>
+<ul>
+<li><p>Le test d’une fonction permet de s’assurer de son comportement avant de passer à la création d’élément plus complexes.</p></li>
+<li><p>Les tests peuvent être dynamique avec des saisis et affichages ou statique par rapport à des valeurs et réponse déjà connus.</p></li>
+<li><p>Pour de grand projet, les tests statiques sont utilisé pour s’assurer du bon fonctionnement au fur et à mesure de la conception.</p></li>
+</ul>
+</section><section id="exercices" class="slide level2">
+<h2>Exercices</h2>
+<ul>
+<li><p>Écrivez une fonction qui retourne le nombre de fois que la fonction à été appellé. Utilisez le mot-clé Static.</p></li>
+<li><p>Écrivez une procédure qui reçoit une variable par référence et un nombre. La procédure additionne le nombre à la variable donnée.</p></li>
+<li><p>Écrivez une procédure qui reçoit une valeur entière et arrète l’exécution du programme si celle-ci n’est pas positive.</p></li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="http://lab.hakim.se/reveal-js/lib/js/head.min.js"></script>
+  <script src="http://lab.hakim.se/reveal-js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1280,
+        height: 720,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'http://lab.hakim.se/reveal-js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'http://lab.hakim.se/reveal-js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'http://lab.hakim.se/reveal-js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Hugo Leblanc">
+  <title>INF130 - Boucles</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="./css/reveal.css">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; position: absolute; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine:empty
+  { position: absolute; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="./css/theme/night.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? './css/print/pdf.css' : './css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="./lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">INF130 - Boucles</h1>
+  <p class="author">Hugo Leblanc</p>
+  <p class="date">Cours 2</p>
+</section>
+
+<section><section id="présentation-du-code" class="title-slide slide level1"><h1>Présentation du code</h1></section><section id="commentaires" class="slide level2">
+<h2>Commentaires</h2>
+<ul>
+<li>En-tête
+<ul>
+<li>Nom</li>
+<li>Description</li>
+<li>Auteur</li>
+</ul></li>
+<li>Intérieur des blocs de code
+<ul>
+<li>Description des actions</li>
+<li>Un commentaire par action</li>
+</ul></li>
+</ul>
+</section><section id="espacement" class="slide level2">
+<h2>Espacement</h2>
+<ul>
+<li>Indentation horizontale</li>
+<li>Espacement vertical (saut de ligne)</li>
+</ul>
+</section><section id="noms-significatifs" class="slide level2">
+<h2>Noms significatifs</h2>
+<ul>
+<li>Noms significatifs au contexte</li>
+</ul>
+</section><section id="constantes" class="slide level2">
+<h2>Constantes</h2>
+<ul>
+<li><p>Les constantes remplacent l’utilisation des valeurs numériques statiques dans le code.</p></li>
+<li><p>Par convention, elles sont écrites en majuscules.</p></li>
+<li><p>Les déclarations se font au début du module (en dehors des sous-programmes)</p></li>
+<li><p>On assigne directement la valeur à la constante durant la déclaration.</p></li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode vb"><code class="sourceCode monobasic"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">Const</span> MA_CONSTANTE <span class="kw">As</span> <span class="dt">Integer</span> = 50</a></code></pre></div>
+</section></section>
+<section><section id="structures-de-contrôles-itératives" class="title-slide slide level1"><h1>Structures de contrôles itératives</h1></section><section id="boucle---while" class="slide level2">
+<h2>Boucle - While</h2>
+<ul>
+<li><p>Les boucles répètent un bloc de code.</p></li>
+<li><p>La boucle while répète le bloc de code tant que la condition est respecté.</p></li>
+<li><p>Le while est habituellement utilisé quand on ne connait pas le nombre d’itérations à faire.</p></li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode vb"><code class="sourceCode monobasic"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">While </span>x &lt; 10</a>
+<a class="sourceLine" id="cb2-2" data-line-number="2">    <span class="co">&#39;Instructions</span></a>
+<a class="sourceLine" id="cb2-3" data-line-number="3">Wend</a></code></pre></div>
+</section><section id="exercices" class="slide level2">
+<h2>Exercices</h2>
+<ul>
+<li><p>Saisit un nombre à l’utilisateur et recommence la saisit tant que le nombren’est pas 0.</p></li>
+<li><p>Calcule la somme des nombres de 1 a n. On saisit n.</p></li>
+<li><p>Procédure qui saisit un nombre à l’utilisateur et va afficher le nombrefactoriel de la saisit (5!=1x2x3x4x5).</p></li>
+</ul>
+</section><section id="boucles---for" class="slide level2">
+<h2>Boucles - For</h2>
+<ul>
+<li><p>La boucle for intègre la configuration d’un compteur à même la boucle.</p></li>
+<li><p>On utilise le for quand l’on connait le nombre d’itérations à faire.</p></li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode vb"><code class="sourceCode monobasic"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">For </span>i = 1 <span class="kw">To</span> 10</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2">    MsgBox i</a>
+<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="kw">Next </span>i</a>
+<a class="sourceLine" id="cb3-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb3-5" data-line-number="5"><span class="kw">For </span>i = 1 <span class="kw">To</span> 10 <span class="kw">Step</span> 2</a>
+<a class="sourceLine" id="cb3-6" data-line-number="6">    MsgBox i</a>
+<a class="sourceLine" id="cb3-7" data-line-number="7"><span class="kw">Next </span>i</a>
+<a class="sourceLine" id="cb3-8" data-line-number="8"></a>
+<a class="sourceLine" id="cb3-9" data-line-number="9"><span class="kw">For </span>i = 5 <span class="kw">To</span> 1 <span class="kw">Step</span> -1</a>
+<a class="sourceLine" id="cb3-10" data-line-number="10">    MsgBox i</a>
+<a class="sourceLine" id="cb3-11" data-line-number="11"><span class="kw">Next </span>i</a></code></pre></div>
+</section><section id="exercices-1" class="slide level2">
+<h2>Exercices</h2>
+<ul>
+<li>Calcule la somme des nombre de 1 à n. On saisit n. Utilisez un for.</li>
+<li>Compte le nombre de 0 entrez au clavier sur 10 essais.</li>
+</ul>
+</section></section>
+<section><section id="opérateurs" class="title-slide slide level1"><h1>Opérateurs</h1></section><section id="opérateurs-logiques" class="slide level2">
+<h2>Opérateurs logiques</h2>
+<ul>
+<li>Les opérateurs logiques opèrent sur des valeurs booléennes</li>
+<li>La conjonction ET : And</li>
+<li>La disjonction OU : Or</li>
+<li>La négation NON : Not</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th>a</th>
+<th>b</th>
+<th>a And b</th>
+<th>a Or b</th>
+<th>Not a</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr class="even">
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</section><section id="exercices-2" class="slide level2">
+<h2>Exercices</h2>
+<ul>
+<li>Procédure qui saisit l’âge de l’utilisateur et qui indique si ce dernier a droitau tarif réduit. Le tarif réduit est disponible pour les personnes d’âge mineur(&lt;18) ou d’âge d’or (&gt;60).</li>
+</ul>
+</section></section>
+<section><section id="sous-programmes" class="title-slide slide level1"><h1>Sous-programmes</h1></section><section id="sous-programmes-1" class="slide level2">
+<h2>Sous-programmes</h2>
+<ul>
+<li>Un sous-programme est un bloc de code réalisant une tâche précise.</li>
+<li>La fonction retourne (se transformer en) une valeur.</li>
+<li>Un sous-programme qui ne retourne rien est nommée une procédure.</li>
+<li>Un sous-programme peut avoir des paramètres. Ceux-ci dictent l’utilisation du sous-programme.</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode vb"><code class="sourceCode monobasic"><a class="sourceLine" id="cb4-1" data-line-number="1">variable = NomFonction(paramètre1, paramètre2)</a></code></pre></div>
+</section></section>
+    </div>
+  </div>
+
+  <script src="./lib/js/head.min.js"></script>
+  <script src="./js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1280,
+        height: 720,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: './lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: './plugin/zoom-js/zoom.js', async: true },
+          { src: './plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

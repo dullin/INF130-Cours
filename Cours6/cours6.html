@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>INF130 - Les tableaux</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="http://lab.hakim.se/reveal-js/css/reveal.css">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; position: absolute; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine:empty
+  { position: absolute; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="http://lab.hakim.se/reveal-js/css/theme/black.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'http://lab.hakim.se/reveal-js/css/print/pdf.css' : 'http://lab.hakim.se/reveal-js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="http://lab.hakim.se/reveal-js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">INF130 - Les tableaux</h1>
+  <p class="date">Cours 6</p>
+</section>
+
+<section><section id="tableaux" class="title-slide slide level1"><h1>Tableaux</h1></section><section id="description" class="slide level2">
+<h2>Description</h2>
+<ul>
+<li><p>Les tableaux sont des collections de plusieurs éléments du même type avec un seul identificateur.</p></li>
+<li><p>Les tableaux nous permettent de travailler avec de grands échantillons de données.</p></li>
+<li><p>Nous utiliserons la configuration Option Base 1 dans nos module pour que les tableau commence à la case 1 (et non 0).</p></li>
+</ul>
+</section><section id="création-de-tableaux" class="slide level2">
+<h2>Création de tableaux</h2>
+<ul>
+<li>La déclaration de tableau se fait comme une variable mais en ajoutant des parenthèses après le nom avec le nombre de cases voulus.</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode vb"><code class="sourceCode monobasic"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">Dim</span> monTableau(5) <span class="kw">As</span> <span class="dt">Integer</span></a>
+<a class="sourceLine" id="cb1-2" data-line-number="2"><span class="kw">Dim</span> AutreTableau(1 <span class="kw">To</span> 10) <span class="kw">As</span> <span class="dt">Double</span></a>
+<a class="sourceLine" id="cb1-3" data-line-number="3"><span class="kw">Dim</span> DernierTableau(2 <span class="kw">To</span> 4) <span class="kw">As</span> <span class="dt">String</span></a></code></pre></div>
+<ul>
+<li>La numérotation des cases commence à 1 par défaut (grâce à Option Base 1).</li>
+</ul>
+</section><section id="tableaux-de-multiples-dimensions" class="slide level2">
+<h2>Tableaux de multiples dimensions</h2>
+<ul>
+<li><p>On peut avoir des tableaux de plusieurs dimensions. On délimite chaque dimension avec un virgule.</p></li>
+<li><p>Par convention, les dimensions d’une tableau 2D est représenté en (ligne,colonne).</p></li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode vb"><code class="sourceCode monobasic"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">Dim</span> tableau2D(5, 5) <span class="kw">As</span> <span class="dt">Integer</span></a>
+<a class="sourceLine" id="cb2-2" data-line-number="2"><span class="kw">Dim</span> AutreTableau2D(1 <span class="kw">To</span> 5, 2 <span class="kw">To</span> 4) <span class="kw">As</span> <span class="dt">Double</span></a></code></pre></div>
+</section><section id="utilisation-des-cases-du-tableau" class="slide level2">
+<h2>Utilisation des cases du tableau</h2>
+<ul>
+<li><p>On invoque la case d’un tableau en utilisant un indice entre parenthèses.</p></li>
+<li><p>On utilise cette méthode pour assigner de nouvelle valeur ou aller consulter les valeurs déjà présentes.</p></li>
+<li><p>Les tableaux de plusieurs dimensions demandes le bon nombres d’indice (1 pour chaque dimensions).</p></li>
+</ul>
+</section><section id="exemple-dutilisation-dun-tableau" class="slide level2">
+<h2>Exemple d’utilisation d’un tableau</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode vb"><code class="sourceCode monobasic"><a class="sourceLine" id="cb3-1" data-line-number="1">monTableau(3) = 4</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="kw">If </span>monTableau(3) = 4 <span class="kw">Then</span></a>
+<a class="sourceLine" id="cb3-3" data-line-number="3"><span class="co">&#39;Autre instructions</span></a>
+<a class="sourceLine" id="cb3-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb3-5" data-line-number="5">AutreTableau2D(2,3) = 2.43</a></code></pre></div>
+</section><section id="allocation-dynamique" class="slide level2">
+<h2>Allocation dynamique</h2>
+<ul>
+<li><p>Un tableau dynamique ne contient pas de taille à sa définition.</p></li>
+<li><p>Il faut ensuite le redimensionner avant de l’utiliser avec Redim.</p></li>
+<li><p>On peut ensuite le redimensionner à volonté.</p></li>
+<li><p>On redimensionne avec le mot clé Preserve pour ne pas perdre l’information déjà contenu dans le tableau.</p></li>
+</ul>
+</section><section id="passage-de-tableaux" class="slide level2">
+<h2>Passage de tableaux</h2>
+<ul>
+<li><p>On passe des tableaux en paramètre sans indiquer leur taille. On ne fait qu’ajouter les parenthèses après l’identificateur pour indiquer que la variable sera un tableau.</p></li>
+<li><p>Les tableaux sont obligatoirement passés par référence. Il faut donc faire attention aux modifications de tableaux durant l’exécution de sous-programme.</p></li>
+<li><p>Pour savoir la taille d’un tableau, les fonction LBound et UBound permettent de déterminer respectivement l’indice inférieur et supérieur d’un tableau.</p></li>
+</ul>
+</section><section id="retour-de-tableaux" class="slide level2">
+<h2>Retour de tableaux</h2>
+<p>Retour de tableaux Pour retourner un tableau, trois éléments doivent être mis en places:</p>
+<ul>
+<li><p>Le type de retour doit indiquer que le retour est un tableau (en ajoutant des parenthèses).</p></li>
+<li><p>Créez un tableau de retour qui va contenir le tableau qu’on veut retourner (on ne peux pas utiliser la variable de retour comme un tableau directement).</p></li>
+<li><p>Assignez la tableau de retour à la variable de retour.</p></li>
+</ul>
+</section><section id="exemple-de-retour-de-tableau" class="slide level2">
+<h2>Exemple de retour de tableau</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode vb"><code class="sourceCode monobasic"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">Function </span>retourTableau() <span class="kw">As</span> <span class="dt">Integer</span>()</a>
+<a class="sourceLine" id="cb4-2" data-line-number="2">    <span class="kw">Dim</span> retour() <span class="kw">As</span> <span class="dt">Integer</span></a>
+<a class="sourceLine" id="cb4-3" data-line-number="3">    <span class="kw">ReDim</span> retour(5)</a>
+<a class="sourceLine" id="cb4-4" data-line-number="4">    retourTableau = retour</a>
+<a class="sourceLine" id="cb4-5" data-line-number="5"><span class="kw">End Function</span></a></code></pre></div>
+</section><section id="destruction-de-tableaux-dynamique" class="slide level2">
+<h2>Destruction de tableaux dynamique</h2>
+<ul>
+<li><p>Le mot clé <span class="alert">Erase</span> permet de détruire un tableau dynamique déjà existant.</p></li>
+<li><p>Faire attention, Ubound/Lbound sur un tableau vide génère une erreur.</p></li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode vb"><code class="sourceCode monobasic"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">Sub </span>TestErase()</a>
+<a class="sourceLine" id="cb5-2" data-line-number="2">    <span class="kw">Dim</span> tab() <span class="kw">As</span> <span class="dt">Integer</span></a>
+<a class="sourceLine" id="cb5-3" data-line-number="3">    <span class="kw">ReDim</span> tab(5)</a>
+<a class="sourceLine" id="cb5-4" data-line-number="4">    tab(3) = 5</a>
+<a class="sourceLine" id="cb5-5" data-line-number="5">    </a>
+<a class="sourceLine" id="cb5-6" data-line-number="6">    Erase tab</a>
+<a class="sourceLine" id="cb5-7" data-line-number="7"><span class="kw">End Sub</span></a></code></pre></div>
+</section></section>
+    </div>
+  </div>
+
+  <script src="http://lab.hakim.se/reveal-js/lib/js/head.min.js"></script>
+  <script src="http://lab.hakim.se/reveal-js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1280,
+        height: 720,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'http://lab.hakim.se/reveal-js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'http://lab.hakim.se/reveal-js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'http://lab.hakim.se/reveal-js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>INF130 - Événements et formulaire</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="http://lab.hakim.se/reveal-js/css/reveal.css">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="http://lab.hakim.se/reveal-js/css/theme/black.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'http://lab.hakim.se/reveal-js/css/print/pdf.css' : 'http://lab.hakim.se/reveal-js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="http://lab.hakim.se/reveal-js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">INF130 - Événements et formulaire</h1>
+  <p class="date">Cours 10</p>
+</section>
+
+<section id="événements-dexcel" class="slide level1">
+<h1>Événements d’Excel</h1>
+<ul>
+<li><p>Les objets d’Excel peuvent aussi avoir des événements reliés avec du code.</p></li>
+<li><p>Un événement est une action pris par l’utilisateur ou l’application qui est reconnu par l’objet. (Ex: Sélectionné une feuille, Ouvrir Excel, Clicker sur un bouton)</p></li>
+<li><p>La liste d’événement des différents objets est disponible dans des menus déroulant dans l’éditeur VBA.</p></li>
+</ul>
+</section>
+<section id="formulaires" class="slide level1">
+<h1>Formulaires</h1>
+<ul>
+<li><p>Un formulaire est créé au même niveau qu’un module.</p></li>
+<li><p>Le formulaire aura deux aspect: visuel et code.</p></li>
+<li><p>On peut modifier l’aspect visuel pour y ajouter des contrôles de notre choix.</p></li>
+<li><p>On peut lié les contrôles à du code avec les événements des objets.</p></li>
+</ul>
+</section>
+<section id="gestion-du-formulaires" class="slide level1">
+<h1>Gestion du formulaires</h1>
+<ul>
+<li><p>Chaque contrôles nous donne un nouvel objet avec des événements.</p></li>
+<li><p>On doit géré les événements dans la partie code du formulaire.</p></li>
+<li><p>On utilize les methodes show et hide de l’objet du formulaire pour faire afficher et disparaitre le formulaire à partir de nos module.</p></li>
+<li><p>Les formulaires sont une exception à la règle habituelle sur les variables globales. Nous les utiliserons pour garder en mémoire l’information contenu dans le formulaire.</p></li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="http://lab.hakim.se/reveal-js/lib/js/head.min.js"></script>
+  <script src="http://lab.hakim.se/reveal-js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1280,
+        height: 900,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'http://lab.hakim.se/reveal-js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'http://lab.hakim.se/reveal-js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'http://lab.hakim.se/reveal-js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>INF130 - Objets d’Excel</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="http://lab.hakim.se/reveal-js/css/reveal.css">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="http://lab.hakim.se/reveal-js/css/theme/black.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'http://lab.hakim.se/reveal-js/css/print/pdf.css' : 'http://lab.hakim.se/reveal-js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="http://lab.hakim.se/reveal-js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">INF130 - Objets d’Excel</h1>
+  <p class="date">Cours 9</p>
+</section>
+
+<section id="evironnement-dexcel" class="slide level1">
+<h1>Evironnement d’Excel</h1>
+<ul>
+<li><p>L’environnement d’Excel est un hiérarichie d’objets.</p></li>
+<li><p>Au plus haut niveau, nous avons le classeur (.xlsm).</p></li>
+<li><p>Le classeur contient des feuilles de calculs, des modules et des formulaires.</p></li>
+<li><p>Chaque feuille de calculs contiennent des cellules.</p></li>
+<li><p>Une plage est une collection de plusieurs cellules.</p></li>
+</ul>
+</section>
+<section id="contrôles-de-formulaire" class="slide level1">
+<h1>Contrôles de formulaire</h1>
+<ul>
+<li><p>On doit avoir accès à l’onglet Développeur (on l’ajoute dans les options d’Excel) pour avoir accès au contrôles.</p></li>
+<li><p>Les contrôles peuvents être ajoutés à des feuilles de calcul ou des formulaires</p></li>
+</ul>
+</section>
+<section id="contrôles-de-formulaire-1" class="slide level1">
+<h1>Contrôles de formulaire</h1>
+<ul>
+<li><p>Les cases à cocher permettent d’indiquer si une option est activée au moyen d’un crochet.</p></li>
+<li><p>Les cases d’options permettent de choisir une option parmi un groupe d’options mutuellement exclusives. Pour les utiliser, il faut tout d’abord ajouter un groupe d’options.</p></li>
+</ul>
+</section>
+<section id="contrôles-de-formulaire-2" class="slide level1">
+<h1>Contrôles de formulaire</h1>
+<ul>
+<li><p>Les compteurs et les barres de défilement permettent d’augmenter ou de réduire une valeur affichée.</p></li>
+<li><p>Les zones de liste et les zones combinées déroulantes permettent de choisir un élément dans une liste.</p></li>
+<li><p>Les boutons permettent l’exécution de macros ou de programmes VBA.</p></li>
+</ul>
+</section>
+<section id="les-objets-dexcel" class="slide level1">
+<h1>Les objets d’Excel</h1>
+<ul>
+<li><p>Un objet est un entité qui contient à la fois des propriétés (variables) et des méthodes (sous-programmes).</p></li>
+<li><p>Des centaines d’objets sont diponible dans Excel mais les plus important sont les suivants:</p>
+<ul>
+<li><p>Application – l’application d’Excel (et tous les classeurs ouvert)</p></li>
+<li><p>Workbook – Un classeur avec ses feuilles</p></li>
+<li><p>Worksheet – Une feuille de calcul</p></li>
+<li><p>Range – Une sélection de cellule d’une feuille</p></li>
+</ul></li>
+<li><p>Les objets peuvent être utilisé en tant que paramètre de sous-programmes.</p></li>
+</ul>
+</section>
+<section id="accéder-au-contenu-dune-feuille" class="slide level1">
+<h1>Accéder au contenu d’une feuille</h1>
+<ul>
+<li><p>Il est possible d’accéder au contenu des cellules dans une feuille à l’aide des propriétés Range et Cells.</p></li>
+<li><p>Cells(ligne ,colonne) permet de faire réréfence à une cellule particulière.</p></li>
+</ul>
+</section>
+<section id="exemple-daccès-avec-range" class="slide level1">
+<h1>Exemple d’accès avec range</h1>
+<ul>
+<li><p>Range permet de sélectionner un plage de cellule voici quelque exemple d’utilisation:</p>
+<ul>
+<li><p>Range(&quot;A1&quot;)</p></li>
+<li><p>Range(&quot;A1:E5&quot;)</p></li>
+<li><p>Ragne(&quot;CELLULE_NOMME&quot;)</p></li>
+<li><p>Range(Cells(2, 2), Cells(10, 5))</p></li>
+</ul></li>
+</ul>
+</section>
+    </div>
+  </div>
+
+  <script src="http://lab.hakim.se/reveal-js/lib/js/head.min.js"></script>
+  <script src="http://lab.hakim.se/reveal-js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1280,
+        height: 900,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'http://lab.hakim.se/reveal-js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'http://lab.hakim.se/reveal-js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'http://lab.hakim.se/reveal-js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

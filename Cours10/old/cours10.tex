@@ -1,0 +1,54 @@
+\documentclass[aspectratio=169,usenames,dvipsnames]{beamer}
+\usepackage{listings}
+
+\usetheme[progressbar=frametitle]{metropolis}
+
+\makeatletter
+\setlength{\metropolis@titleseparator@linewidth}{2pt}
+\setlength{\metropolis@progressonsectionpage@linewidth}{2pt}
+\setlength{\metropolis@progressinheadfoot@linewidth}{2pt}
+\makeatother
+
+\lstset{language=[Visual]Basic, basicstyle=\footnotesize\ttfamily, keywordstyle=\color{blue}, commentstyle=\color{OliveGreen},frame=single}
+
+\title{INF130 : Ordinateurs et programmation}
+\subtitle{Semaine 10 – Formulaires}
+\author{Hugo Leblanc}
+
+\begin{document}
+    \maketitle
+
+    %--- Next Frame ---%
+    \begin{frame}{Sommaire}
+        \tableofcontents
+    \end{frame}
+    %--- Next Frame ---%
+
+    \section{Événements d'Excel}
+    \begin{frame}{Événements d'Excel}
+        \begin{itemize}
+            \item Les objets d’Excel peuvent aussi avoir des événements reliés avec du code.
+            \item Un événement est une action pris par l’utilisateur ou l’application qui est reconnu par l’objet. (Ex: Sélectionné une feuille, Ouvrir Excel, Clicker sur un bouton)
+            \item La liste d’événement des différents objets est disponible dans des menus déroulant dans l’éditeur VBA.
+        \end{itemize}
+    \end{frame}
+    %--- Next Frame ---%
+    \section{Formulaires}
+    \begin{frame}{Formulaires}
+        \begin{itemize}
+            \item Un formulaire est créé au même niveau qu’un module.
+            \item Le formulaire aura deux aspect: visuel et code.
+            \item On peut modifier l’aspect visuel pour y ajouter des contrôles de notre choix.
+            \item On peut lié les contrôles à du code avec les événements des objets.
+        \end{itemize}
+    \end{frame}
+    %--- Next Frame ---%
+    \begin{frame}{Gestion du formulaires}
+        \begin{itemize}
+            \item Chaque contrôles nous donne un nouvel objet avec des événements.
+            \item On doit géré les événements dans la partie code du formulaire.
+            \item On utilize les methodes show et hide de l’objet du formulaire pour faire afficher et disparaitre le formulaire à partir de nos module.
+            \item Les formulaires sont une exception à la règle habituelle sur les variables globales. Nous les utiliserons pour garder en mémoire l’information contenu dans le formulaire.
+        \end{itemize}
+    \end{frame}
+\end{document}

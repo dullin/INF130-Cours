@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <title>INF130 - Les chaines</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="http://lab.hakim.se/reveal-js/css/reveal.css">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="http://lab.hakim.se/reveal-js/css/theme/black.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'http://lab.hakim.se/reveal-js/css/print/pdf.css' : 'http://lab.hakim.se/reveal-js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="http://lab.hakim.se/reveal-js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">INF130 - Les chaines</h1>
+  <p class="date">Cours 7</p>
+</section>
+
+<section><section id="chaine-de-caractères" class="title-slide slide level1"><h1>Chaine de caractères</h1></section><section id="table-ascii" class="slide level2">
+<h2>Table ASCII</h2>
+<ul>
+<li><p>Chaques caractères utillisées dans une chaine est représenté dans la table de conversion ASCII.</p></li>
+<li><p>Deux fonctions de VBA nous permets de faire les conversion d’une à l’autre:</p>
+<ul>
+<li><p>Chr retourne le caractères associé à un code ASCII.</p></li>
+<li><p>Asc retourne le code ASCII associé à un caractère donné.</p></li>
+</ul></li>
+</ul>
+</section><section id="exercices" class="slide level2">
+<h2>Exercices</h2>
+<ul>
+<li>Écrivez une fonction qui convertit un caractère représentant une lettre minuscule en lettre majuscule.</li>
+</ul>
+</section><section id="opérateurs-sur-le-chaines" class="slide level2">
+<h2>Opérateurs sur le chaines</h2>
+<ul>
+<li><p><span class="alert">=</span> permet l’assignation d’une chaine</p></li>
+<li><p>Opérateurs de comparaisons permettent de faire une comparaison par rapport à la valeur de la table ASCII entre deux chaines.</p></li>
+<li><p><span class="alert">&amp;</span> permet la concaténation entre deux valeurs qui donne une chaine</p></li>
+<li><p><span class="alert">+</span> permet la concaténation qui donne une valeur numérique si une des deux expressions est numérique.</p></li>
+</ul>
+</section><section id="exercices-1" class="slide level2">
+<h2>Exercices</h2>
+<ul>
+<li><p>Écrivez une fonction qui retourne True si un caractère représente un chiffre et False dans tous les autres cas.</p></li>
+<li><p>Écrivez une fonction qui retourne True si un caractère représente une lettre majuscule et False dans tous les autres cas.</p></li>
+<li><p>Écrivez une fonction qui retourne True si un caractère représente une lettre minuscule et False dans tous les autres cas.</p></li>
+<li><p>Écrivez une fonction qui retourne True si un caractère représente une lettre et False dans tous les autres cas.</p></li>
+</ul>
+</section><section id="exercices-2" class="slide level2">
+<h2>Exercices</h2>
+<ul>
+<li>Écrivez une fonction nommée lpad qui reçoit une chaîne de caractères et ajoute n blancs au début de la chaîne. À titre d’exemple, l’appel lpad(&quot;allo&quot;, 3) retourne &quot; allo&quot;.</li>
+</ul>
+</section><section id="fonctions-sur-les-chaines" class="slide level2">
+<h2>Fonctions sur les chaines</h2>
+<ul>
+<li><p><span class="alert">Len</span> – Donne le nombres de caractères dans la chaine.</p></li>
+<li><p><span class="alert">UCase</span> / <span class="alert">LCase</span> – Convertie en majuscules ou minuscule un chaine.</p></li>
+<li><p><span class="alert">Left</span> / <span class="alert">Right</span> – Extrait une partie de la chaine à partir de la gauche ou la droite.</p></li>
+<li><p><span class="alert">Mid</span> – Extrait une partie de la chaine à partir d’un caractère définie.</p></li>
+<li><p><span class="alert">Trim</span> – Enlève les blancs à gauche et à droite de la chaine.</p></li>
+<li><p><span class="alert">InStr</span> – Cherche une chaine dans une autre.</p></li>
+</ul>
+</section><section id="exercices-3" class="slide level2">
+<h2>Exercices</h2>
+<ul>
+<li><p>Écrivez une fonction nommée ltrim qui reçoit une chaîne de caractères et retourne celle-ci sans les blancs se trouvant au début.</p></li>
+<li><p>Écrivez une fonction qui reçoit une chaîne de caractères et un caractère. Elle retourne le nombre d’occurrences de ce caractère dans la chaîne (le nombre de fois que ce caractère se retrouve dans la chaîne).</p></li>
+</ul>
+</section><section id="exercices-4" class="slide level2">
+<h2>Exercices</h2>
+<ul>
+<li>Écrivez une fonction qui reçoit deux chaînes de caractères; la première contient une phrase alors que la seconde contient une liste de caractères à conserver. La fonction parcourt la phrase et à chaque fois qu’elle trouve un caractère qui n’est pas dans la seconde chaîne et qui n’est pas un blanc, elle le remplace par une étoile. Elle retourne la phrase obtenue. À titre d’exemple, l’appel phrase_censuree(&quot;vive le vent&quot;, &quot;eit &quot;) retourne la chaîne &quot;*i*e *e *e*t&quot;.</li>
+</ul>
+</section></section>
+    </div>
+  </div>
+
+  <script src="http://lab.hakim.se/reveal-js/lib/js/head.min.js"></script>
+  <script src="http://lab.hakim.se/reveal-js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1280,
+        height: 720,
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'http://lab.hakim.se/reveal-js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'http://lab.hakim.se/reveal-js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'http://lab.hakim.se/reveal-js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>
